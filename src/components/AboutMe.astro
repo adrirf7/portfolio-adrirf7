@@ -1,0 +1,34 @@
+---
+const personalImageAlt = "Adrian Rodriguez";
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+  <div class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1">
+    <p>
+      Me llamo Adrián Rodríguez, soy <strong>Web Developer con un título en Desarrollo de Interfaces Web</strong>. Apasionado por la tecnología y el aprendizaje continuo, me enfoco
+      en construir aplicaciones eficientes, escalables y centradas en el usuario.
+    </p>
+
+    <p>
+      Me destaco por mi <strong>adaptabilidad, pensamiento crítico y habilidades para resolver problemas</strong>, siempre buscando crear código limpio, mantenible y con impacto.
+    </p>
+
+    <p>
+      💻 <strong>Tech Stack:</strong><br />
+      <strong>Frontend:</strong> HTML5 · CSS3 · JavaScript · TypeScript · <br />
+      <strong>Backend:</strong> Node.js · Java<br />
+      stFrameworks y librerias: React · Angular · Tailwind · Bootstrap <br />
+      Base de datos: MySQL · MongoDB<br />
+      Herramientas: Vite · Git · REST APIs · Agile
+    </p>
+  </div>
+
+  <img
+    width="200"
+    height="200"
+    src="/me.png"
+    alt={personalImageAlt}
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+  />
+</article>

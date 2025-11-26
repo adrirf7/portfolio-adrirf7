@@ -7,13 +7,9 @@ import LinkButton from "./LinkButton.astro";
 
 const TAGS = {
   JS: {
-    name: "JavaScript",
-    class: "bg-[#F7DF1E] text-black",
     icon: JavaScript,
   },
   VITE: {
-    name: "Vite",
-    class: "bg-[#646CFF] text-white",
     icon: Vite,
   },
 };
@@ -23,7 +19,8 @@ const PROJECTS = [
     description: "Juego de BlackJack desarrollado con JavaScript vanilla y Vite, implementando arquitectura modular y buenas prácticas de desarrollo.",
     link: "https://black-jack-adrirf7.vercel.app/",
     github: "https://github.com/adrirf7/BlackJack-adrirf7",
-    image: "/projects/black-jack.png",
+    imageDark: "/projects/dark/black-jack-dark.png",
+    imageLight: "/projects/light/black-jack-light.png",
     tags: [TAGS.JS, TAGS.VITE],
   },
   {
@@ -32,7 +29,8 @@ const PROJECTS = [
       "SPA desarrollada con JavaScript vanilla que implementa el juego Snake con controles táctiles para móviles, múltiples tamaños de tablero, sistema de puntuación en tiempo real y temas personalizables",
     link: "https://snake-adrirf7.vercel.app/",
     github: "https://github.com/adrirf7/snake-adrirf7",
-    image: "/projects/snake-game.png",
+    imageDark: "/projects/dark/snake-game-dark.png",
+    imageLight: "/projects/light/snaker-game-light.png",
     tags: [TAGS.JS, TAGS.VITE],
   },
 ];
@@ -40,16 +38,24 @@ const PROJECTS = [
 
 <div class="flex flex-col gap-y-16">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    PROJECTS.map(({ imageDark, imageLight, title, description, tags, link, github }) => (
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
-              alt="Recién llegado vs 5 años en Nueva Zelanda"
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
-              src={image}
-            />
+            <a href={link} target="_blank" rel="noopener noreferrer" class="w-full h-full">
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 dark:hidden cursor-pointer"
+                loading="lazy"
+                src={imageLight}
+              />
+              <img
+                alt={title}
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 hidden dark:block cursor-pointer"
+                loading="lazy"
+                src={imageDark}
+              />
+            </a>
           </div>
         </div>
 
@@ -59,9 +65,8 @@ const PROJECTS = [
             <ul class="flex flex-row mb-2 gap-x-2">
               {tags.map((tag) => (
                 <li>
-                  <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}>
-                    <tag.icon class="size-4" />
-                    {tag.name}
+                  <span class={`flex gap-x-2 rounded-full text-xs py-1 px-1`}>
+                    <tag.icon class="size-5" />
                   </span>
                 </li>
               ))}

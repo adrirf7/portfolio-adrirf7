@@ -4,6 +4,12 @@ import JavaScript from "./icons/JavaScript.astro";
 import Vite from "./icons/Vite.astro";
 import Link from "./icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
+import TailWind from "./icons/TailWind.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+import React from "./icons/React.astro";
+import Mongodb from "./icons/Mongodb.astro";
+import Node from "./icons/Node.astro";
+import Ts from "./icons/Ts.astro";
 
 const TAGS = {
   JS: {
@@ -12,15 +18,62 @@ const TAGS = {
   VITE: {
     icon: Vite,
   },
+  ASTRO: {
+    icon: AstroIcon,
+  },
+  TAILWIND: {
+    icon: TailWind,
+  },
+  NODE: {
+    icon: Node,
+  },
+  REACT: {
+    icon: React,
+  },
+  MONGODB: {
+    icon: Mongodb,
+  },
+  TS: {
+    icon: Ts,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Marketly",
+    description:
+      "Plataforma de e-commerce completa construida con Astro, React y MongoDB. Incluye autenticación JWT, gestión de perfiles, carrito de compras con persistencia, filtros avanzados y sistema de reseñas. Destaca por su arquitectura híbrida SSR/SPA y diseño responsive con Tailwind CSS.",
+    link: "https://marketly-adrirf7.vercel.app/",
+    github: "https://github.com/adrirf7/Marketly",
+    imageDark: "/projects/dark/marketly-dark.webp",
+    imageLight: "/projects/light/marketly-light.webp",
+    tags: [TAGS.TS, TAGS.ASTRO, TAGS.REACT, TAGS.NODE, TAGS.MONGODB],
+  },
+  {
+    title: "TODO List",
+    description:
+      "Aplicación de lista de tareas con Astro 5, con CRUD completo, filtros, y persistencia en localStorage. Implementa arquitectura modular con separación de responsabilidades y diseño responsive optimizado.",
+    link: "https://todo-adrirf7.vercel.app/",
+    github: "https://github.com/adrirf7/ToDo-list",
+    imageDark: "/projects/dark/todo-dark.webp",
+    imageLight: "/projects/light/todo-light.webp",
+    tags: [TAGS.JS, TAGS.ASTRO],
+  },
+  {
+    title: "React Shop",
+    description: "Carrito de compras con filtros por categoría/precio, gestión de estado con Context API y useReducer, paginación y rutas dinámicas. React 19, React Router, Vite.",
+    link: "https://shopping-cart-gy9z.vercel.app/",
+    github: "https://github.com/adrirf7/ecommerce-react",
+    imageDark: "/projects/dark/react-shop-dark.webp",
+    imageLight: "/projects/light/react-shop-light.webp",
+    tags: [TAGS.JS, TAGS.REACT],
+  },
   {
     title: "BlackJack",
     description: "Juego de BlackJack desarrollado con JavaScript vanilla y Vite, implementando arquitectura modular y buenas prácticas de desarrollo.",
     link: "https://black-jack-adrirf7.vercel.app/",
     github: "https://github.com/adrirf7/BlackJack-adrirf7",
-    imageDark: "/projects/dark/black-jack-dark.png",
-    imageLight: "/projects/light/black-jack-light.png",
+    imageDark: "/projects/dark/black-jack-dark.webp",
+    imageLight: "/projects/light/black-jack-light.webp",
     tags: [TAGS.JS, TAGS.VITE],
   },
   {
@@ -29,8 +82,8 @@ const PROJECTS = [
       "SPA desarrollada con JavaScript vanilla que implementa el juego Snake con controles táctiles para móviles, múltiples tamaños de tablero, sistema de puntuación en tiempo real y temas personalizables",
     link: "https://snake-adrirf7.vercel.app/",
     github: "https://github.com/adrirf7/snake-adrirf7",
-    imageDark: "/projects/dark/snake-game-dark.png",
-    imageLight: "/projects/light/snaker-game-light.png",
+    imageDark: "/projects/dark/snake-game-dark.webp",
+    imageLight: "/projects/light/snake-game-light.webp",
     tags: [TAGS.JS, TAGS.VITE],
   },
 ];
